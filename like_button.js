@@ -15,7 +15,7 @@ class LikeButton extends React.Component {
       <button onClick={() => this.setState({ liked: true })}>
       Like
       </button>
-    
+
   }
 }
 
@@ -26,7 +26,7 @@ document.querySelectorAll('.like_button_container').forEach(domContainer => {
     console.log(commentID);
 
     ReactDOM.render(
-      <LikeButton/>,
+      <LikeButton commentID={commentID}/>,
       domContainer
     );
   });

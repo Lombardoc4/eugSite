@@ -133,18 +133,18 @@
 
   var loadSection = function loadSection() {
     // Get window hash(#)
-    log(window.location);
+    // log(window.location);
     var hash = window.location.hash; // const e;
 
     closePreviousSection(); // If the window has a hash, add the on class to section && toggle Menu OFF
     // Else return to landing page && toggle Menu ON
 
     if (hash) {
-      document.querySelector("section".concat(hash)).classList.add('on');
       document.querySelector("section".concat(hash)).prepend(document.querySelector('#menuHeader'));
+      document.querySelector("section".concat(hash)).classList.add('on');
     } else {
-      document.querySelector("section#landingMenu").classList.add('on');
-      showMenu();
+      document.querySelector("section".concat(hash)).prepend(document.querySelector('#menuHeader'));
+      document.querySelector("section#home").classList.add('on'); // showMenu();
     }
   }; // If Hash Changes Load Proper Section
 
